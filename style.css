@@ -1,0 +1,54 @@
+ body {
+      background-color: #f0f0f0;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: repeat(8, 60px);
+      grid-template-rows: repeat(8, 60px);
+      border: 2px solid #000;
+    }
+
+    .square {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    /* Alternating colors like a real chessboard */
+    .square:nth-child(even) {
+      background-color: #769656;
+    }
+
+    .square:nth-child(odd) {
+      background-color: #eeeed2;
+    }
+
+    /* Fix correct color alternation row-wise */
+    .board div:nth-child(8n + 1),
+    .board div:nth-child(8n + 3),
+    .board div:nth-child(8n + 5),
+    .board div:nth-child(8n + 7) {
+      background-color: #eeeed2;
+    }
+
+    .board div:nth-child(8n + 2),
+    .board div:nth-child(8n + 4),
+    .board div:nth-child(8n + 6),
+    .board div:nth-child(8n + 8) {
+      background-color: #769656;
+    }
+
+    .row {
+      display: contents;
+    }
+
